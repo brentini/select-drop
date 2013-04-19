@@ -13,18 +13,20 @@
   At the bottom of your document link both jQuery and Select Drop:
 
   ```
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendors/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendors/jquery-2.0.0.min.js"><\/script>')</script>
     <script src="js/select-drop.min.js"></script>
   ```
 
   Then attach the plugin to the element:
 
   ```
-    <select>
-        <option>Hello</option>
-        <option>Wassup</option>
-    </select>
+    <form>
+      <select>
+          <option>Hello</option>
+          <option>Wassup</option>
+      </select>
+    </form>
 
     <script>
         $(document).ready(function() {
