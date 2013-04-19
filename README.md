@@ -1,10 +1,10 @@
 # Select Drop
 
-  Simple jQuery plugin to convert select to dropdown.
+  Simple jQuery plugin to convert select to dropdown. Nothing particularly fancy, if you're looking for something taking care of all your input elements there are other plugins out there that will be more appropriate.
 
 ## Basic Usage
 
-  In the head of your html add the Select Drop stylesheet. A basic style is applied to the dropdown, it will be easy to customized to fit your needs.
+  In the head of your html add the Select Drop stylesheet. A basic style is applied to the dropdown, it will be easy to customize it to fit your needs.
 
   ```
     <link rel="stylesheet" href="css/select-drop.css">
@@ -46,7 +46,7 @@
 
   Here is the list of options available:
 
-    * `speed`:
-    * `eventType`: event used to show the option list - default to click
-    * `onChange`: callback function called after the selected value is changed
-    * `autoSubmit`: If set to true, the form will be submitted when the selected value is changed - default to false
+  * `speed`:
+  * `eventType`: event used to show the option list - default to click
+  * `onChange`: callback function called after the selected value is changed
+  * `autoSubmit`: If set to true, the form will be submitted when the selected value is changed - default to false
