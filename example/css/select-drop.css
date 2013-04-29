@@ -47,8 +47,9 @@ body {
     border-bottom: 0;
 }
 .select-drop li:hover {
-    color: blue;
+    background: #ccc;
 }
 .select-drop ul .selected {
-    background: #ccc;
+    color: #fff;
+    background: #333;
 }
