@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 lt-ie6"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ie7"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 ie8"> <![endif]-->
+<!--[if gt IE 8]> <html class="no-js ie9"> <![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Select Drop</title>
+    <link rel="stylesheet" href="css/select-drop.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <form action="/">
+            <p>Select something:</p>
+            <p>
+                <select>
+                    <option>Pick me</option>
+                    <option>No pick me</option>
+                    <option>Don't pick me</option>
+                </select>
+            </p>
+        </form>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendors/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="js/select-drop.js"></script>
+    <script>
+        $(document).ready(function() {
+            // attach the plugin
+            $('select').selectDrop()
+        })
+    </script>
+</body>
+</html>
