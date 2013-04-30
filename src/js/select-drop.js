@@ -35,6 +35,11 @@
 
   SelectDrop.prototype = {
 
+    /**
+     * Creates the dropdown element
+     * and hide the select
+     * Attacht the event to the dropdown
+     */
     init: function() {
       var self           = this
         , list           = $('<ul>')
@@ -99,17 +104,23 @@
       })
     }
 
+    /**
+     * Show / hide the dropdown
+     */
   , showList: function() {
       if (this.isListVisible) {
-        this.dropDown.removeClass('open').find('ul').slideUp(this.options.speed)
+        this.dropDown.removeClass('open').find('ul').stop().slideUp(this.options.speed)
         this.isListVisible = false
       }
       else {
-        this.dropDown.addClass('open').find('ul').slideDown(this.options.speed)
+        this.dropDown.addClass('open').find('ul').stop().slideDown(this.options.speed)
         this.isListVisible = true
       }
     }
 
+    /**
+     * Change the selected value
+     */
   , changeValue: function(self, choice) {
       // assign the value to the select
       var choice = $(choice)
