@@ -8,12 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Select Drop</title>
     <link rel="stylesheet" href="css/select-drop.css">
+    <link rel="stylesheet" href="css/prism.css">
 </head>
 <body>
 
     <div class="wrapper">
+        <h1>Select Drop</h1>
         <div class="block-left">
-            Options
+            Basic example:
         </div>
         <div class="block-right">
             <form action="/">
@@ -26,12 +28,24 @@
                     </select>
                 </p>
             </form>
+
+            <div class="code">
+                <pre data-src="select-drop" class="language-javascript">
+                    <code class="language-javascript">
+                        // basic usage
+                        $(document).ready(function() {
+                            $('select').selectDrop()
+                        })
+                    </code>
+                </pre>
+            </div>
         </div>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendors/jquery-1.9.1.min.js"><\/script>')</script>
     <script src="js/select-drop.js"></script>
+    <script src="js/vendors/prism.js"></script>
     <script>
         $(document).ready(function() {
             // attach the plugin

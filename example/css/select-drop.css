@@ -24,10 +24,12 @@ body {
     cursor: pointer;
 }
 .select-drop ul {
+    position: absolute;
     display: none;
     width: 159px;
     margin: 0;
     padding: 0;
+    z-index: 50;
     font-family: Helvetica, sans-serif;
     font-size: 11px;
     list-style: none;
