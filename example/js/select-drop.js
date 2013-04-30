@@ -109,11 +109,11 @@
      */
   , showList: function() {
       if (this.isListVisible) {
-        this.dropDown.removeClass('open').find('ul').slideUp(this.options.speed)
+        this.dropDown.removeClass('open').find('ul').stop().slideUp(this.options.speed)
         this.isListVisible = false
       }
       else {
-        this.dropDown.addClass('open').find('ul').slideDown(this.options.speed)
+        this.dropDown.addClass('open').find('ul').stop().slideDown(this.options.speed)
         this.isListVisible = true
       }
     }
