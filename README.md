@@ -41,18 +41,18 @@
     $('select').selectDrop({
         eventType: 'click'
       , autoSubmit: true
-    });
+    })
   ```
 
 ## Options
 
   Here is the list of options available:
 
-  * `speed`:
+  * `speed`
   * `eventType`: event used to show the option list - default to click
   * `onChange`: callback function called after the selected value is changed
   * `autoSubmit`: If set to true, the form will be submitted when the selected value is changed - default to false
 
 ## Browser Support
 
-Select Drop has been tested on Chrome (v?), Safari (v?), Firefox (v?) and IE7+
+Select Drop has been tested on Google Chrome, Safari, Firefox and IE7+.
