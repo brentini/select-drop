@@ -1,1 +1,95 @@
-<h1>Github page ?</h1>
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 lt-ie6"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ie7"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 ie8"> <![endif]-->
+<!--[if gt IE 8]> <html class="no-js ie9"> <![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Select Drop</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/select-drop.css">
+    <link rel="stylesheet" href="css/okaidia.css">
+</head>
+<body>
+
+    <header class="wrapper">
+        <h1>Select Drop</h1>
+        <h2>Simple jQuery plugin to convert select to dropdown</h2>
+    </header>
+    <div class="wrapper">
+        <section>
+            <div class="block-left">
+                <h4>Basic example:</h4>
+            </div>
+            <div class="block-right">
+                <p>
+                    <select id="first-select">
+                        <option>Pick me</option>
+                        <option>No pick me</option>
+                        <option>Don't pick me</option>
+                    </select>
+                </p>
+            </div>
+            <div class="cb"></div>
+            <pre class="language-javascript"><code class="language-javascript">$(document).ready(function() {
+  $('#first-select').selectDrop()
+})</code></pre>
+        </section>
+
+        <section class="no-border">
+            <div class="block-left">
+                <h4>Options:</h4>
+            </div>
+            <div class="block-right">
+                <p>Your choice: "<span id="choice">First</span>"</p>
+                <p>
+                    <select id="second-select">
+                        <option value="first">First</option>
+                        <option value="second">Second</option>
+                        <option value="third">Third</option>
+                        <option value="five">Five</option>
+                        <option value="wait">Wait...</option>
+                    </select>
+                </p>
+            </div>
+            <div class="cb"></div>
+            <pre class="language-javascript"><code class="language-javascript">$(document).ready(function() {
+  $('#second-select').selectDrop({
+      eventType: 'hover'   // you can change the event
+    , onChange: callback   // and trigger callback functions on change
+  })
+})
+
+function callback() {
+    $('#choice').text($('#second-select').val())
+}
+</code></pre>
+        </section>
+    </div>
+    <div class="cb"></div>
+    <footer class="wrapper">
+        <p class="fl"><a href="https://github.com/romainberger/select-drop" title="See on GitHub">See on GitHub</a></p>
+        <p class="fr"><a href="http://romainberger.com">by Romain Berger</a></p>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendors/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="js/select-drop.js"></script>
+    <script src="js/vendors/prism.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#first-select').selectDrop()
+
+            $('#second-select').selectDrop({
+                eventType: 'hover'   // you can change the event
+              , onChange: callback   // and trigger callback functions on change
+            })
+
+            function callback() {
+                $('#choice').text($('#second-select').val())
+            }
+        })
+    </script>
+</body>
+</html>

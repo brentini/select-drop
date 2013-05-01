@@ -1,0 +1,55 @@
+/**
+ * Select Drop
+ * https://github.com/romainberger/select-drop
+ * @version 0.3
+ * @author: Romain Berger <romain@romainberger.com>
+ */
+
+.select-drop {
+    position: relative;
+}
+.select-drop .active-value {
+    display: block;
+    width: 153px;
+    height: 20px;
+    padding-left: 6px;
+    color: #1d1d1d;
+    font-size: 11px;
+    line-height: 1.8;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+.select-drop ul {
+    position: absolute;
+    display: none;
+    width: 159px;
+    margin: 0;
+    padding: 0;
+    z-index: 50;
+    font-family: Helvetica, sans-serif;
+    font-size: 11px;
+    list-style: none;
+    border: 1px solid #333;
+    border-top: 0;
+    background: #fff;
+}
+.select-drop li {
+    width: 149px;
+    height: 20px;
+    padding: 4px 5px;
+    line-height: 1.8;
+    cursor: pointer;
+}
+.select-drop li:last-child {
+    border-bottom: 0;
+}
+.select-drop li:hover {
+    background: #4183c4;
+    color: #fff;
+}
+.select-drop ul .selected {
+    color: #fff;
+    background: #333;
+}
