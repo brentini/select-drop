@@ -98,7 +98,15 @@
       self.element.hide()
 
       // bind the events
-      self.dropDown.on(this.options.eventType, $.proxy(self.showList, self))
+      if (this.options.eventType === 'hover') {
+        self.dropDown.on({
+            mouseenter: function() { $.proxy(self.showList(), self) }
+          , mouseleave: function() { $.proxy(self.showList(), self) }
+        })
+      }
+      else {
+        self.dropDown.on(this.options.eventType, $.proxy(self.showList, self))
+      }
       self.dropDown.find('li').click(function() {
         self.changeValue(self, this)
       })
