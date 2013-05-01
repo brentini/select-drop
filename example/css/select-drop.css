@@ -5,15 +5,6 @@
  * @author: Romain Berger <romain@romainberger.com>
  */
 
-body {
-    margin: 0;
-    padding: 0;
-}
-.wrapper {
-    width: 1000px;
-    margin: 0 auto;
-}
-
 .select-drop {
     position: relative;
 }
@@ -49,14 +40,14 @@ body {
     height: 20px;
     padding: 4px 5px;
     line-height: 1.8;
-    border-bottom: 1px solid #DFDFDF;
     cursor: pointer;
 }
 .select-drop li:last-child {
     border-bottom: 0;
 }
 .select-drop li:hover {
-    background: #ccc;
+    background: #4183c4;
+    color: #fff;
 }
 .select-drop ul .selected {
     color: #fff;
