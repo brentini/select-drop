@@ -58,6 +58,8 @@
   $('#second-select').selectDrop({
       eventType: 'hover'   // you can change the event
     , onChange: callback   // and trigger callback functions on change
+    , autoSubmit: false    // if set the true, the parent form will be
+                           // submitted when the value is changed
   })
 })
 
