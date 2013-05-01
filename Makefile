@@ -7,6 +7,7 @@ duplicate:
 	@echo "\n${HR}"
 	@printf "\033[36mCopying uncompressed file...\033[39m"
 	@cp example/js/select-drop.js src/js/select-drop.js
+	@cp example/css/select-drop.css src/css/select-drop.css
 	@echo "             ${CHECK}"
 
 build:
