@@ -45,7 +45,21 @@
         , list           = $('<ul>')
         , first          = true
         , selectedOption = false
+        , groups         = self.element.find('optgroup')
         , options        = self.element.find('option')
+
+
+      if (groups.length) {
+        groups.each(function() {
+          var label = $(this).attr('label')
+          // go crazy
+        })
+      }
+      else {
+        // regular stuff
+      }
+
+      // @todo refactor this sh*t as a method
 
       // try to find the selected value
       options.each(function() {

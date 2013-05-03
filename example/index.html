@@ -41,7 +41,7 @@
 })</code></pre>
         </section>
 
-        <section class="no-border">
+        <section>
             <div class="block-left">
                 <h4>Options:</h4>
             </div>
@@ -72,6 +72,27 @@ function callback() {
 }
 </code></pre>
         </section>
+
+        <section>
+            <div class="block-left">
+                <h4>Optgroups</h4>
+            </div>
+            <div class="block-right">
+                <p>
+                    <select id="third-select">
+                        <optgroup label="Europe">
+                            <option>France</option>
+                            <option>Spain</option>
+                        </optgroup>
+                        <optgroup label="USA">
+                            <option>New York</option>
+                            <option>California</option>
+                            <option>Florida</option>
+                        </optgroup>
+                    </select>
+                </p>
+            </div>
+        </section>
     </div>
     <div class="cb"></div>
     <footer class="wrapper">
@@ -95,6 +116,8 @@ function callback() {
             function callback() {
                 $('#choice').text($('#second-select').val())
             }
+
+            $('#third-select').selectDrop({})
         })
     </script>
 </body>

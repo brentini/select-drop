@@ -46,7 +46,7 @@ section {
     padding-bottom: 30px;
     border-bottom: 1px solid #ccc;
 }
-section.no-border {
+section:last-child {
     border-bottom: 0;
 }
 .block-left {
