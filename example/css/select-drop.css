@@ -8,6 +8,7 @@
 .select-drop {
     position: relative;
 }
+/* selected value */
 .select-drop .active-value {
     display: block;
     width: 153px;
@@ -21,6 +22,7 @@
     border: 1px solid #333;
     cursor: pointer;
 }
+/* options list */
 .select-drop ul {
     position: absolute;
     display: none;
@@ -49,6 +51,7 @@
     background: #4183c4;
     color: #fff;
 }
+/* selected option in the list */
 .select-drop ul .selected {
     color: #fff;
     background: #333;
