@@ -3,7 +3,7 @@
  * Simple jQuery plugin to convert select to dropdown
  *
  * https://github.com/romainberger/select-drop
- * @version 0.3
+ * @version 0.4
  * @author: Romain Berger <romain@romainberger.com>
  *
  * Basic Usage:
