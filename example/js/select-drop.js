@@ -23,12 +23,13 @@
   'use strict'
 
   var SelectDrop = function(element, options) {
-    this.element       = $(element)
-    this.options       = options
-    this.parent        = this.element.parent()
-    this.dropDown      = $('<div>')
-    this.activeValue   = $('<span>')
-    this.isListVisible = false
+    this.element        = $(element)
+    this.options        = options
+    this.parent         = this.element.parent()
+    this.dropDown       = $('<div>')
+    this.activeValue    = $('<span>')
+    this.isListVisible  = false
+    this.selectedOption = false
 
     this.init()
   }
@@ -44,63 +45,34 @@
       var self           = this
         , list           = $('<ul>')
         , first          = true
-        , selectedOption = false
         , groups         = self.element.find('optgroup')
         , options        = self.element.find('option')
 
+
+      // try to find the selected value
+      options.each(function() {
+        if ($(this).attr('selected') === 'selected') {
+          self.selectedOption = $(this)
+        }
+      })
 
       if (groups.length) {
         groups.each(function() {
           var label = $(this).attr('label')
           // go crazy
+          console.log(label)
         })
       }
       else {
-        // regular stuff
+        // create the elements
+        options.each(function() {
+          var li = self.createOption(this, first)
+          first = false
+          list.append(li)
+        })
       }
 
       // @todo refactor this sh*t as a method
-
-      // try to find the selected value
-      options.each(function() {
-        if ($(this).attr('selected') === 'selected') {
-          selectedOption = $(this)
-        }
-      })
-
-      // create the elements
-      options.each(function() {
-        var li = $('<li>').attr('id', self.element.attr('name')+'-'+$(this).attr('value'))
-                          .text($(this).text())
-
-        if (selectedOption) {
-          if (selectedOption.attr('value') === $(this).attr('value')) {
-            li.addClass('selected')
-            self.activeValue.addClass('active-value')
-            if (self.options.label) {
-              self.activeValue.text(self.options.label+' '+$(this).text())
-            }
-            else {
-              self.activeValue.text($(this).text())
-            }
-          }
-        }
-        else {
-          if (first) {
-            li.addClass('selected')
-            self.activeValue.addClass('active-value')
-            if (self.options.label) {
-              self.activeValue.text(self.options.label+' '+$(this).text())
-            }
-            else {
-              self.activeValue.text($(this).text())
-            }
-            first = false
-          }
-        }
-
-        list.append(li)
-      })
 
       self.dropDown
         .addClass('select-drop')
@@ -124,6 +96,41 @@
       self.dropDown.find('li').click(function() {
         self.changeValue(self, this)
       })
+    }
+
+  , createOption: function(option, first) {
+      var self   = this
+        , option = $(option)
+        , li     = $('<li>').attr('id', self.element.attr('name')+'-'+option.attr('value'))
+                          .text(option.text())
+
+      if (self.selectedOption) {
+        if (self.selectedOption.attr('value') === option.attr('value')) {
+          li.addClass('selected')
+          self.activeValue.addClass('active-value')
+          if (self.options.label) {
+            self.activeValue.text(self.options.label+' '+option.text())
+          }
+          else {
+            self.activeValue.text(option.text())
+          }
+        }
+      }
+      else {
+        if (first) {
+          li.addClass('selected')
+          self.activeValue.addClass('active-value')
+          if (self.options.label) {
+            self.activeValue.text(self.options.label+' '+option.text())
+          }
+          else {
+            self.activeValue.text(option.text())
+          }
+          first = false
+        }
+      }
+
+      return li
     }
 
     /**
