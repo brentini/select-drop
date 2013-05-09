@@ -28,10 +28,10 @@
             </div>
             <div class="block-right">
                 <p>
-                    <select id="first-select">
-                        <option>Pick me</option>
-                        <option>No pick me</option>
-                        <option>Don't pick me</option>
+                    <select id="first-select" name="first-select">
+                        <option value="pick-me">Pick me</option>
+                        <option value="no-pick-me">No pick me</option>
+                        <option value="dont-pick-me">Don't pick me</option>
                     </select>
                 </p>
             </div>
@@ -41,14 +41,14 @@
 })</code></pre>
         </section>
 
-        <section class="no-border">
+        <section>
             <div class="block-left">
                 <h4>Options:</h4>
             </div>
             <div class="block-right">
                 <p>Your choice: "<span id="choice">First</span>"</p>
                 <p>
-                    <select id="second-select">
+                    <select id="second-select" name="second-select">
                         <option value="first">First</option>
                         <option value="second">Second</option>
                         <option value="third">Third</option>
@@ -71,6 +71,31 @@ function callback() {
     $('#choice').text($('#second-select').val())
 }
 </code></pre>
+        </section>
+
+        <section>
+            <div class="block-left">
+                <h4>Also works with option groups:</h4>
+            </div>
+            <div class="block-right">
+                <p>
+                    <select id="third-select" name="third-select">
+                        <optgroup label="Europe">
+                            <option value="france">France</option>
+                            <option value="spain">Spain</option>
+                        </optgroup>
+                        <optgroup label="USA">
+                            <option value="new-york">New York</option>
+                            <option value="california">California</option>
+                            <option value="florida">Florida</option>
+                        </optgroup>
+                    </select>
+                </p>
+            </div>
+            <div class="cb"></div>
+            <pre class="language-javascript"><code class="labguage-javascript">$(document).ready(function() {
+    $('#third-select').selectDrop()
+})</code></pre>
         </section>
     </div>
     <div class="cb"></div>
@@ -95,6 +120,8 @@ function callback() {
             function callback() {
                 $('#choice').text($('#second-select').val())
             }
+
+            $('#third-select').selectDrop()
         })
     </script>
 </body>
