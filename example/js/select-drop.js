@@ -98,7 +98,7 @@
       else {
         self.dropDown.on(this.options.eventType, $.proxy(self.showList, self))
       }
-      self.dropDown.find('li').click(function() {
+      self.dropDown.find('.select-value').click(function() {
         self.changeValue(self, this)
       })
     }
@@ -107,7 +107,8 @@
       var self   = this
         , option = $(option)
         , li     = $('<li>').attr('id', self.element.attr('name')+'-'+option.attr('value'))
-                          .text(option.text())
+                            .text(option.text())
+                            .addClass('select-value')
 
       if (self.selectedOption) {
         if (self.selectedOption.attr('value') === option.attr('value')) {
