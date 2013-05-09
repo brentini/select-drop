@@ -56,3 +56,11 @@
     color: #fff;
     background: #333;
 }
+/* Optgroup label */
+.select-drop .optgroup-label,
+.select-drop .optgroup-label:hover {
+    color: #1d1d1d;
+    font-weight: bold;
+    background: #ccc;
+    cursor: default;
+}

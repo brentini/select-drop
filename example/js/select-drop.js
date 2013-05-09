@@ -59,8 +59,15 @@
       if (groups.length) {
         groups.each(function() {
           var label = $(this).attr('label')
-          // go crazy
-          console.log(label)
+            , groupLabel = $('<li>').addClass('optgroup-label').text(label)
+
+          list.append(groupLabel)
+          // insert label thingy
+          $(this).find('option').each(function() {
+            var li = self.createOption(this, first)
+            first = false
+            list.append(li)
+          })
         })
       }
       else {
@@ -71,8 +78,6 @@
           list.append(li)
         })
       }
-
-      // @todo refactor this sh*t as a method
 
       self.dropDown
         .addClass('select-drop')
