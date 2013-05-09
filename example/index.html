@@ -75,23 +75,27 @@ function callback() {
 
         <section>
             <div class="block-left">
-                <h4>Optgroups</h4>
+                <h4>Also works with option groups:</h4>
             </div>
             <div class="block-right">
                 <p>
                     <select id="third-select" name="third-select">
                         <optgroup label="Europe">
-                            <option>France</option>
-                            <option>Spain</option>
+                            <option value="france">France</option>
+                            <option value="spain">Spain</option>
                         </optgroup>
                         <optgroup label="USA">
-                            <option>New York</option>
-                            <option>California</option>
-                            <option>Florida</option>
+                            <option value="new-york">New York</option>
+                            <option value="california">California</option>
+                            <option value="florida">Florida</option>
                         </optgroup>
                     </select>
                 </p>
             </div>
+            <div class="cb"></div>
+            <pre class="language-javascript"><code class="labguage-javascript">$(document).ready(function() {
+    $('#third-select').selectDrop()
+})</code></pre>
         </section>
     </div>
     <div class="cb"></div>
