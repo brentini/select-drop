@@ -64,6 +64,7 @@
     , onChange: callback   // and trigger callback functions on change
     , autoSubmit: false    // if set to true, the parent form will be
                            // submitted when the value is changed
+    , effect: 'show'       // change the effect to show / hide the list
   })
 })
 
@@ -115,6 +116,7 @@ function callback() {
             $('#second-select').selectDrop({
                 eventType: 'hover'   // you can change the event
               , onChange: callback   // and trigger callback functions on change
+              , effect: 'show'
             })
 
             function callback() {

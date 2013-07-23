@@ -3,7 +3,7 @@
  * Simple jQuery plugin to convert select to dropdown
  *
  * https://github.com/romainberger/select-drop
- * @version 0.4
+ * @version 0.5.0
  * @author: Romain Berger <romain@romainberger.com>
  *
  * Basic Usage:
@@ -11,7 +11,8 @@
  *    speed: 500,                // speed of the list opening (default to 300)
  *    label: 'Option: ',         // label added before the first value (optionnal)
  *    onChange: function() {},   // callback function when the value is changed
- *    autoSubmit: true           // autosubmit the form on change (default to false)
+ *    autoSubmit: true,          // autosubmit the form on change (default to false)
+ *    effect: 'slide'            // 'slide' or 'show' (default 'slide')
  *  })
  * For more see the documentation at:
  * https://github.com/romainberger/select-drop
@@ -20,7 +21,7 @@
 
 !function($) {
 
-  'use strict'
+  'use strict';
 
   var SelectDrop = function(element, options) {
     this.element        = $(element)
@@ -104,8 +105,8 @@
     }
 
   , createOption: function(option, first) {
+      option = $(option)
       var self   = this
-        , option = $(option)
         , li     = $('<li>').attr('id', self.element.attr('name')+'-'+option.attr('value'))
                             .text(option.text())
                             .addClass('select-value')
@@ -144,11 +145,23 @@
      */
   , showList: function() {
       if (this.isListVisible) {
-        this.dropDown.removeClass('open').find('ul').stop().slideUp(this.options.speed)
+        if (this.options.effect === 'slide') {
+          this.dropDown.removeClass('open').find('ul').stop().slideUp(this.options.speed)
+        }
+        else {
+          this.dropDown.removeClass('open').find('ul').stop().hide()
+        }
+
         this.isListVisible = false
       }
       else {
-        this.dropDown.addClass('open').find('ul').stop().slideDown(this.options.speed)
+        if (this.options.effect === 'slide') {
+          this.dropDown.addClass('open').find('ul').stop().slideDown(this.options.speed)
+        }
+        else {
+          this.dropDown.addClass('open').find('ul').stop().show()
+        }
+
         this.isListVisible = true
       }
     }
@@ -158,8 +171,8 @@
      */
   , changeValue: function(self, choice) {
       // assign the value to the select
-      var choice = $(choice)
-        , value  = choice.attr('id').replace(self.element.attr('name')+'-', '')
+      choice = $(choice)
+      var value  = choice.attr('id').replace(self.element.attr('name')+'-', '')
       self.element.val(value)
 
       // udpate the displayed value
@@ -199,6 +212,7 @@
     , eventType: 'click'
     , onChange: false
     , autoSubmit: false
+    , effect: 'slide'
   }
 
   $.fn.selectDrop.Constructor = SelectDrop
