@@ -20,7 +20,7 @@
 
 !function($) {
 
-  'use strict'
+  'use strict';
 
   var SelectDrop = function(element, options) {
     this.element        = $(element)
@@ -105,10 +105,10 @@
 
   , createOption: function(option, first) {
       var self   = this
-        , option = $(option)
         , li     = $('<li>').attr('id', self.element.attr('name')+'-'+option.attr('value'))
                             .text(option.text())
                             .addClass('select-value')
+      option = $(option)
 
       if (self.selectedOption) {
         if (self.selectedOption.attr('value') === option.attr('value')) {
@@ -158,8 +158,8 @@
      */
   , changeValue: function(self, choice) {
       // assign the value to the select
-      var choice = $(choice)
-        , value  = choice.attr('id').replace(self.element.attr('name')+'-', '')
+      choice = $(choice)
+      var value  = choice.attr('id').replace(self.element.attr('name')+'-', '')
       self.element.val(value)
 
       // udpate the displayed value
