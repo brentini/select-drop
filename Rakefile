@@ -21,7 +21,7 @@ task :build do
   file = "src/js/select-drop.min.js"
   text = File.read(file)
   File.open(file, 'w') do |f|
-    content = "/*! Select Drop v0.4.1 | (c) 2013 Romain Berger | https://github.com/romainberger/select-drop */\n"+text
+    content = "/*! Select Drop v0.5.0 | (c) 2013 Romain Berger | https://github.com/romainberger/select-drop */\n"+text
     f.write(content)
   end
   puts '                 '+check
