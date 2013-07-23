@@ -4,6 +4,8 @@ require 'fileutils'
 
 check = "\033[32m✔ Done\033[39m"
 
+task :default => :jshint
+
 task :jshint do
   system "jshint src/js/select-drop.js"
 end

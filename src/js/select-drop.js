@@ -104,11 +104,11 @@
     }
 
   , createOption: function(option, first) {
+      option = $(option)
       var self   = this
         , li     = $('<li>').attr('id', self.element.attr('name')+'-'+option.attr('value'))
                             .text(option.text())
                             .addClass('select-value')
-      option = $(option)
 
       if (self.selectedOption) {
         if (self.selectedOption.attr('value') === option.attr('value')) {
