@@ -18,5 +18,11 @@ task :build do
 
   print "\033[36mMinifying source file...\033[39m"
   system "uglifyjs src/js/select-drop.js -o src/js/select-drop.min.js"
+  file = "src/js/select-drop.min.js"
+  text = File.read(file)
+  File.open(file, 'w') do |f|
+    content = "/*! Select Drop v0.4.1 | (c) 2013 Romain Berger | https://github.com/romainberger/select-drop */\n"+text
+    f.write(content)
+  end
   puts '                 '+check
 end
